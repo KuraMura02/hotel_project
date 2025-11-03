@@ -1,0 +1,98 @@
+/* Стили для секции услуг */
+.services-section {
+    padding: 80px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.services-section h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.services-scroll, .extra-services-scroll {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 30px 0;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 50px;
+}
+
+.services-scroll::-webkit-scrollbar, 
+.extra-services-scroll::-webkit-scrollbar {
+    height: 8px;
+    background-color: #f1f1f1;
+}
+
+.services-scroll::-webkit-scrollbar-thumb,
+.extra-services-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.service-card {
+    flex: 0 0 250px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 30px 20px;
+    scroll-snap-align: start;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.service-card p {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.extra-services-scroll {
+    margin-top: 30px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .services-section h2 {
+        font-size: 2rem;
+    }
+    
+    .service-card {
+        flex: 0 0 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        flex: 0 0 200px;
+        padding: 20px 15px;
+    }
+    
+    .service-card i {
+        font-size: 2rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+}

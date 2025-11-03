@@ -1,0 +1,239 @@
+/* Стили для страницы бронирования */
+.booking-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/booking-hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.booking-hero h1 {
+    font-size: 3.5rem;
+}
+
+.booking-form-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.detailed-booking-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.form-group h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.input-group.full-width {
+    flex: 0 0 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--primary-color);
+}
+
+.submit-booking-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.booking-summary {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.booking-summary h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-dates, 
+.summary-room, 
+.summary-guests, 
+.summary-extras, 
+.summary-total {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-total {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.summary-total p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.summary-extras ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.summary-extras li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+.booking-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* Форма */
+.detailed-booking-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Итог бронирования */
+.booking-summary {
+    width: 300px;
+    position: sticky; /* фиксируем при скролле */
+    top: 100px; /* отступ от верха страницы */
+    flex-shrink: 0;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: max-content;
+}
+.detailed-booking-form {
+    margin-bottom: 0; /* убираем любой нижний отступ */
+    padding-bottom: 40px; /* если нужно немного внутреннего отступа */
+}
+
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 992px) {
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-summary {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+/* Адаптивные стили */
+@media (max-width: 992px) {
+    .booking-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .detailed-booking-form {
+        padding: 30px;
+    }
+    
+    .form-group h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .booking-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .detailed-booking-form, .booking-summary {
+        padding: 20px;
+    }
+    
+    .form-group h2 {
+        font-size: 1.3rem;
+    }
+    
+    .summary-total p {
+        font-size: 1.1rem;
+    }
+}
