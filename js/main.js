@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.innerHTML = `
         <nav class="mobile-navbar">
             <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
             <a href="rooms.html">Номера</a>
             <a href="booking.html">Бронирование</a>
             <a href="contact.html">Контакты</a>
@@ -143,4 +144,5 @@ document.addEventListener('DOMContentLoaded', function() {
     currentIndex = (currentIndex + 1) % totalSlides;
     showSlide(currentIndex);
   }, 5000);
+
 
