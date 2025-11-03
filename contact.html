@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Hotel Miranza</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Главная</a>
+                <a href="about.html">О нас</a>
+                <a href="rooms.html">Номера</a>
+                <a href="booking.html">Бронирование</a>
+                <a href="contact.html" class="active">Контакты</a>
+            </nav>
+            <div class="language-switcher">
+                <button>KZ</button>
+                <button class="active">RU</button>
+                <button>EN</button>
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Свяжитесь с нами</h1>
+    </section>
+
+    <section class="miranza-contacts">
+  <div class="container">
+    <div class="miranza-row">
+
+      <div class="miranza-info">
+        <h2>Наши контакты</h2>
+
+        <div class="miranza-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Адрес</h3>
+            <p>г. Алматы, ул. Абая 123</p>
+          </div>
+        </div>
+
+        <div class="miranza-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Телефон</h3>
+            <p>+7 (777) 123-45-67</p>
+            <p>+7 (727) 123-45-67</p>
+          </div>
+        </div>
+
+        <div class="miranza-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>info@miranza.com</p>
+            <p>reservation@miranza.com</p>
+          </div>
+        </div>
+
+        <div class="miranza-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Режим работы</h3>
+            <p>Круглосуточно, 24/7</p>
+            <p>Ресепшен работает круглосуточно</p>
+          </div>
+        </div>
+
+        <div class="miranza-social">
+          <h3>Мы в соцсетях</h3>
+          <div class="miranza-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="miranza-form">
+        <h2>Обратная связь</h2>
+        <form id="contactForm">
+          <div class="miranza-group">
+            <label for="contactName">Ваше имя*</label>
+            <input type="text" id="contactName" name="contactName" required>
+          </div>
+          <div class="miranza-group">
+            <label for="contactEmail">Email*</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+          </div>
+          <div class="miranza-group">
+            <label for="contactPhone">Телефон</label>
+            <input type="tel" id="contactPhone" name="contactPhone">
+          </div>
+          <div class="miranza-group">
+            <label for="contactSubject">Тема</label>
+            <select id="contactSubject" name="contactSubject">
+              <option value="question">Вопрос</option>
+              <option value="feedback">Отзыв</option>
+              <option value="complaint">Жалоба</option>
+              <option value="partnership">Сотрудничество</option>
+            </select>
+          </div>
+          <div class="miranza-group">
+            <label for="contactMessage">Сообщение*</label>
+            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="miranza-submit">Отправить сообщение</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    <footer class="footer">
+        <div class="copyright">
+            <p>&copy; 2023 Hotel Miranza. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

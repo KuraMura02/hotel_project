@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Miranza</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/rooms.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!--Date calendar -->
+
+</head>
+<body>
+    <header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html" class="active">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="rooms.html">Номера</a>
+      <a href="booking.html">Бронирование</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+
+    <div class="language-switcher">
+      <button>KZ</button>
+      <button class="active">RU</button>
+      <button>EN</button>
+    </div>
+
+    <div class="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+
+    <section class="hero">
+  <div class="container">
+    <h1 class="title">Miranza Hotel</h1>
+
+    <div class="booking_form">
+      <div class="form-group">
+        <input type="text" id="dates" placeholder="Дата заезда / выезда" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="rooms">Комнаты:</label>
+        <input type="number" id="rooms" value="1" min="1">
+      </div>  
+
+      <div class="form-group">
+        <label for="adults">Взрослые:</label>
+        <input type="number" id="adults" value="1" min="1">
+      </div>
+
+      <!-- Последний блок перед кнопкой — без полоски -->
+      <div class="form-group no-line">
+        <label for="children">Дети:</label>
+        <input type="number" id="children" value="0" min="0">
+      </div>
+
+      <div class="form-group no-line">
+        <button>Бронировать</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <section class="rooms-section">
+  <div class="container">
+    <div class="rooms-info">
+      <h2>Наши номера</h2>
+      <p>Мы предлагаем удобные и светлые номера, которые подойдут Вам.</p>
+    </div>
+    <div class="rooms-carousel">
+      <div class="room-card">
+        <img src="img/rooms/standard.jpg" alt="Стандарт">
+        <h3>Стандарт</h3>
+        <p>Уютный номер с современным дизайном</p>
+        <a href="rooms.html" class="room-btn">Подробнее</a>
+      </div>
+      <div class="room-card">
+        <img src="img/rooms/comfort.jpg" alt="Комфорт">
+        <h3>Комфорт</h3>
+        <p>Просторный номер с дополнительными удобствами</p>
+        <a href="rooms.html" class="room-btn">Подробнее</a>
+      </div>
+      <div class="room-card">
+        <img src="img/rooms/lux.jpg" alt="Люкс">
+        <h3>Люкс</h3>
+        <p>Премиальный номер с эксклюзивным сервисом</p>
+        <a href="rooms.html" class="room-btn">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <h2>Наши услуги</h2>
+    <div class="services-scroll">
+      <div class="service-card">
+        <i class="fas fa-wifi"></i>
+        <h3>Wi-Fi</h3>
+        <p>Высокоскоростной интернет</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-lock"></i>
+        <h3>Сейф</h3>
+        <p>Хранение ценностей</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car"></i>
+        <h3>Паркинг</h3>
+        <p>Охраняемая стоянка</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>Химчистка</h3>
+        <p>Срочная чистка одежды</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-plane"></i>
+        <h3>Тур агентство</h3>
+        <p>Организация экскурсий</p>
+      </div>
+    </div>
+
+    <h3>Дополнительные услуги</h3>
+    <div class="extra-services-scroll">
+      <div class="service-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Ресторан</h3>
+        <p>Международная кухня</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-concierge-bell"></i>
+        <h3>Номера</h3>
+        <p>24/7 сервис</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-users"></i>
+        <h3>Конференц-зал</h3>
+        <p>Для деловых мероприятий</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <h2>Отзывы гостей</h2>
+
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+        <div class="review-card">
+          <p class="review-text">Прекрасный отель с отличным сервисом. Номера чистые и уютные.</p>
+          <p class="review-author">- Айгерим, Алматы</p>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Отличное расположение, вкусные завтраки. Обязательно вернусь!</p>
+          <p class="review-author">- Дмитрий, Москва</p>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Персонал очень внимательный, помогли с трансфером и экскурсиями.</p>
+          <p class="review-author">- Сабина, Астана</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif mb-8">Contact Us</h2>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <i data-feather="map-pin" class="text-yellow-600 mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Address</h3>
+                                <p class="text-gray-600">123 Luxury Avenue, Downtown, City</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <i data-feather="phone" class="text-yellow-600 mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Phone</h3>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <i data-feather="mail" class="text-yellow-600 mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Email</h3>
+                                <p class="text-gray-600">info@hotelmiranza.com</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <i data-feather="clock" class="text-yellow-600 mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Reception Hours</h3>
+                                <p class="text-gray-600">24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-96 rounded-xl overflow-hidden shadow-lg">
+                    <!-- Google Maps iframe -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209179526!2d-73.98784492430482!3d40.75798597138956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="contact-info">
+            <h3>Контакты</h3>
+            <p><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
+            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+            <p><i class="fas fa-envelope"></i> info@miranza.com</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Hotel Miranza. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/booking_data.js"></script>
+
+    <!--Dates calendar-->
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+
+    <script>
+const picker = new easepick.create({
+      element: document.getElementById('dates'),
+      css: [
+        'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css'
+      ],
+      plugins: ['RangePlugin'],
+      RangePlugin: {
+        tooltipNumber(num) {
+          return num - 1;
+        },
+        locale: {
+          one: 'день',
+          other: 'дней',
+        },
+      },
+      format: 'DD.MM.YYYY',
+      autoApply: true,
+      lang: 'ru-RU',
+    });
+</script>
+
+
+
+</body>
+</html>
