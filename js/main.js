@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Создаем содержимое мобильного меню
     mobileMenu.innerHTML = `
+        
         <nav class="mobile-navbar">
             <a href="index.html">Главная</a>
             <a href="about.html">О нас</a>
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
     burgerMenu.addEventListener('click', function() {
         this.classList.toggle('active');
         mobileMenu.classList.toggle('active');
+        
+        // Скрыть/показать шапку при открытии меню
+        
         
         // Анимация бургер-меню в крестик
         const spans = this.querySelectorAll('span');
@@ -144,5 +148,4 @@ document.addEventListener('DOMContentLoaded', function() {
     currentIndex = (currentIndex + 1) % totalSlides;
     showSlide(currentIndex);
   }, 5000);
-
 
