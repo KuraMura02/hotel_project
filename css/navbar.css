@@ -144,8 +144,7 @@ header.hide-logo .logo {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
-    max-width: 400px;
+    width: 100vw;
     height: 100vh;
     background-color: white;
     padding: 100px 30px;
@@ -227,3 +226,4 @@ header.hide-logo .logo {
         height: 50px;
     }
 }
+
