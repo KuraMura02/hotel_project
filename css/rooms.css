@@ -221,7 +221,7 @@
     }
     
     .room-card {
-        flex: 0 0 300px;
+        flex: 0 0 350px;
     }
 }
 
@@ -231,7 +231,7 @@
     }
     
     .room-card {
-        flex: 0 0 280px;
+        flex: 0 0 350px;
     }
     
     .room-description h2 {
