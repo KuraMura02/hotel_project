@@ -1,0 +1,96 @@
+/* Стили для страницы номеров */
+.spa-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/spa/bg-spa.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.spa-hero h1 {
+    font-size: 3.5rem;
+}
+
+/* ===== SPA Section ===== */
+.spa-section {
+    background-color: #f7f7f7;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.spa-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+.spa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.spa-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spa-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.spa-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.spa-item h3 {
+    font-size: 22px;
+    color: #2a2a2a;
+    margin: 15px 0 10px;
+}
+
+.spa-item p {
+    font-size: 16px;
+    color: #555;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #b68c4c;
+}
+
+.spa-note {
+    margin-top: 40px;
+    background-color: #fff3d1;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.spa-note i {
+    color: #d4a017;
+    margin-right: 8px;
+}
