@@ -45,6 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('summaryNights').textContent = '0';
         }
         
+        // Автовыбор комнаты по параметру ?room=lux
+const urlParams = new URLSearchParams(window.location.search);
+const selectedRoom = urlParams.get('room');
+
+if (selectedRoom) {
+    const roomSelect = document.getElementById('roomType');
+    roomSelect.value = selectedRoom;
+}
+
         // Номер
         if (roomTypeSelect.value) {
             const roomTypeText = roomTypeSelect.options[roomTypeSelect.selectedIndex].text;
@@ -97,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Доп. услуги
             let extrasPrice = 0;
             checkedExtras.forEach(checkbox => {
-                if (checkbox.name === 'breakfast') {
+                if (checkbox.value === '1') {
                     extrasPrice += 3000 * parseInt(adultsSelect.value) + 3000 * parseInt(childrenSelect.value);
-                } else if (checkbox.name === 'parking') {
+                } else if (checkbox.value === '2') {
                     extrasPrice += 2000 * nights;
-                } else if (checkbox.name === 'transfer') {
+                } else if (checkbox.value === '3') {
                     extrasPrice += 5000;
                 }
             });
@@ -122,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', updateBookingSummary);
     });
     
+    
     // Обработка отправки формы
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -131,14 +141,66 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Здесь можно добавить отправку данных на сервер
-        alert('Ваше бронирование успешно отправлено! Мы свяжемся с вами для подтверждения.');
-        this.reset();
-        updateBookingSummary();
+        const formData = new FormData(bookingForm);
+
+    fetch('booking_process.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Показать результат на странице
+        const summaryBox = document.getElementById('bookingSummary');
+        summaryBox.innerHTML = `
+            <div class="success-message">
+                <h2>✅ Бронирование отправлено!</h2>
+                <div class="result-box">${data}</div>
+                <button id="backToForm" class="submit-booking-btn">← Вернуться к форме</button>
+            </div>
+        `;
+
+        // Кнопка возврата к форме
+        document.getElementById('backToForm').addEventListener('click', () => {
+            bookingForm.reset();
+            updateBookingSummary();
+            location.reload(); // перезагрузка формы
+        });
+    })
+    .catch(error => {
+        alert('Ошибка при отправке бронирования: ' + error);
+    });
+        
     });
     
     // Инициализация сводки
     updateBookingSummary();
 });
 
-/*booking date*/
+document.addEventListener('DOMContentLoaded', function () {
+
+    const payButton = document.getElementById("pay");
+    if (!payButton) {
+        console.error("Кнопка оплаты не найдена!");
+        return;
+    }
+
+    payButton.onclick = function () {
+        var widget = new cp.CloudPayments();
+
+        widget.charge({
+            publicId: 'pk_test_fffffffffffffffffffffffff',
+            description: 'Тестовая оплата бронирования Miranza',
+            amount: 100,
+            currency: 'KZT',
+            invoiceId: 'TEST_ORDER_001',
+            accountId: 'testuser@mail.com',
+            skin: "classic"
+        },
+        function () {
+            window.location.href = "booking_success.html";
+        },
+        function (reason) {
+            alert("Оплата не прошла: " + reason);
+        });
+    };
+});
