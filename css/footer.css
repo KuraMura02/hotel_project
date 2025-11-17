@@ -1,39 +1,73 @@
-/* Стили для подвала сайта */
+/* ==== СТИЛИ ДЛЯ ПОДВАЛА ==== */
 .footer {
     background-color: var(--secondary-color);
-    color: white;
+    color: #fff;
     padding: 60px 0 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .map-container {
     width: 100%;
-    height: 300px;
-    margin-bottom: 40px;
+    height: 400px; /* можно увеличить для большего эффекта */
+    
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .map-container iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 0;
 }
 
+
+.map-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.space-y-6 p {
+    margin-bottom: 12px;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Контактная информация */
 .contact-info {
-    padding: 40px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    color: white;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #fff;
 }
 
 .contact-info p {
-    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
+    color: #ddd;
+    font-size: 0.95rem;
 }
 
 .contact-info i {
@@ -41,8 +75,45 @@
     width: 20px;
 }
 
+/* Ссылки */
+.footer-about h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.footer-links {
+    margin-left: 0px;
+}
+.footer-links nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* О проекте */
+.footer-about p {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Соцсети */
 .social-links {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .social-links a {
@@ -50,7 +121,7 @@
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #fff;
     border-radius: 50%;
     margin: 0 8px;
     text-align: center;
@@ -63,71 +134,119 @@
     transform: translateY(-3px);
 }
 
+/* Копирайт */
 .copyright {
     text-align: center;
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
     font-size: 0.9rem;
+    color: #ccc;
 }
 
-.full-map {
-    width: 100%;
-    height: 450px;
+.footer-social {
+    display: flex;
+    flex-direction: column;
 }
 
-.full-map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+.footer-social h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #fff;
 }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
-    .footer {
-        padding: 40px 0 0;
+.footer-social .social-links {
+    margin-top: 0;
+}
+
+.footer-social .social-links a {
+    margin: 0 6px 0 0;
+}
+
+/* ==== АДАПТИВНЫЕ СТИЛИ ==== */
+
+/* Планшеты */
+@media (max-width: 991px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        gap: 30px;
     }
-    
-    .contact-info {
+
+    .contact-info, 
+    .footer-links, 
+    .footer-about {
+        align-items: center;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .footer-social {
+    align-items: center;
+}
+
+}
+
+/* Смартфоны */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
         padding: 0 20px 30px;
+        text-align: center;
+    }
+
+    .contact-info p {
+        justify-content: center;
     }
     
     .contact-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
-    
+
+    .footer-about p {
+        font-size: 0.9rem;
+    }
+
     .social-links a {
         width: 36px;
         height: 36px;
         line-height: 36px;
         margin: 0 5px;
     }
+    
+    .footer-links {
+    margin-left: 0px;
+    }
+
+    .footer-social {
+    text-align: center;
 }
 
-@media (max-width: 576px) {
+}
+
+/* Маленькие экраны */
+@media (max-width: 480px) {
     .footer {
         padding: 30px 0 0;
     }
-    
+
     .contact-info h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
-    
+
     .contact-info p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
-    
-    .social-links {
-        margin-top: 20px;
+
+    .copyright {
+        padding: 15px 0;
+        font-size: 0.8rem;
     }
-    
+
     .social-links a {
         width: 32px;
         height: 32px;
         line-height: 32px;
     }
-    
-    .copyright {
-        padding: 15px 0;
-        font-size: 0.8rem;
-    }
-}   
+}
