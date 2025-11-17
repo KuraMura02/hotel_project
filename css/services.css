@@ -1,7 +1,7 @@
-/* Стили для секции услуг */
+
 .services-section {
     padding: 80px 0;
-    background-color: white;
+    background-color: var(--background-color);
     text-align: center;
 }
 
@@ -18,6 +18,7 @@
     padding: 30px 0;
     scroll-snap-type: x mandatory;
     margin-bottom: 50px;
+    scroll-behavior: smooth;
 }
 
 .services-scroll::-webkit-scrollbar, 
@@ -33,12 +34,14 @@
 }
 
 .service-card {
-    flex: 0 0 250px;
+    flex: 0 0 auto;
+    width: 33.3333%;
     background-color: var(--light-gray);
     border-radius: 8px;
     padding: 30px 20px;
     scroll-snap-align: start;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -67,32 +70,147 @@
     margin-top: 30px;
 }
 
-/* Адаптивные стили */
+/* Контейнер с сеткой */
+.services-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0;
+    padding: 20px 0;
+}
+
+/* Карточка услуги */
+.service-card {
+    background: #fff; /* можно менять на светлый серый */
+    border: 1px solid #f1eeeb;
+    padding: 30px 20px;
+    border-radius: 8px;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+    flex: 0 0 100%; /* по умолчанию на мобильных весь ряд */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Hover эффект */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.extra-services-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+}
+/* контейнер-слайдер: горизонтальный трек */
+.extra-service-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* на весь экран */
+  display: block;
+}
+
+/* трек, который будет скроллиться */
+.extra-service-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+/* каждая карточка — ровно ширина области просмотра */
+.extra-service-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* картинка заполняет карточку */
+.extra-service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(60%);
+}
+
+/* наложение текста внизу */
+.card-overlay {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  right: 6%;
+  color: #fff;
+  z-index: 2;
+}
+
+/* стрелки */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.prev { left: 18px; }
+.next { right: 18px; }
+
+/* кнопки немного больше на touch */
+@media (max-width: 600px) {
+  .slider-btn { font-size: 1.6rem; padding: 12px; }
+}
+
+/* плавная остановка при перетаскивании (опционно) */
+.extra-service-track.dragging { transition: none; }
+
+/* Для мобильных */
 @media (max-width: 768px) {
-    .services-section h2 {
-        font-size: 2rem;
-    }
-    
+  .card-overlay h3 {
+    font-size: 2rem;
+  }
+  .card-overlay p {
+    font-size: 1rem;
+  }
+  .card-overlay {
+    bottom: 15%;
+    left: 8%;
+  }
+}
+
+/* Адаптивные колонки */
+@media (min-width: 768px) {
     .service-card {
-        flex: 0 0 220px;
+        flex: 0 0 48%; /* 2 колонки */
     }
 }
 
-@media (max-width: 576px) {
-    .services-section h2 {
-        font-size: 1.8rem;
-    }
-    
+@media (min-width: 992px) {
     .service-card {
-        flex: 0 0 200px;
-        padding: 20px 15px;
+        flex: 0 0 31.9%; /* 3 колонки */
     }
-    
-    .service-card i {
-        font-size: 2rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1.1rem;
-    }
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    .service-card { width: 45%; }
+}
+
+@media (max-width: 768px) {
+    .service-card { width: 70%; }
+}
+
+@media (max-width: 576px) {
+    .service-card { width: 90%; }
+    .services-section h2 { font-size: 1.8rem; }
 }
