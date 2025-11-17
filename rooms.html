@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Номера - Hotel Miranza</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="icon" type="image/png" href="img/icons/miranza_logo.png">
+    <link rel="shortcut icon" href="img/icons/miranza_logo.png">
+
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/navbar.css?v=4">
     <link rel="stylesheet" href="css/rooms.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/footer.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -17,16 +21,18 @@
                 <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
             </a>
             <nav class="navbar">
-                <a href="index.html">Главная</a>
-                <a href="about.html">О нас</a>
-                <a href="rooms.html" class="active">Номера</a>
-                <a href="booking.html">Бронирование</a>
-                <a href="contact.html">Контакты</a>
+                <a href="index.html" data-translate="nav_home">Главная</a>
+                
+                <a href="rooms.html" data-translate="nav_rooms" class="active">Номера</a>
+                <a href="restaurant.html" data-translate="nav_restaurant">Ресторан</a>
+                <a href="spa.html" data-translate="nav_spa">SPA</a>
+                <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+                <a href="contact.html" data-translate="nav_contact">Контакты</a>
             </nav>
             <div class="language-switcher">
-                <button>KZ</button>
-                <button class="active">RU</button>
-                <button>EN</button>
+                <button class="lang" data-lang="kz">KZ</button>
+                <button class="lang" data-lang="ru">RU</button>
+                <button class="lang" data-lang="en">EN</button>
             </div>
             <div class="burger-menu">
                 <span></span>
@@ -37,7 +43,7 @@
     </header>
 
     <section class="rooms-hero">
-        <h1>Наши номера</h1>
+        <h1 data-translate="rooms_title">Наши номера</h1>
     </section>
 
     <section class="room-types">
@@ -48,19 +54,24 @@
                     <img src="img/rooms/standard.jpg" alt="Стандарт">
                 </div>
                 <div class="room-description">
-                    <h2>Стандарт</h2>
-                    <p>Уютный номер площадью 25 м² с современным дизайном. В номере: двуспальная кровать или две односпальные, ванная комната с душем, рабочий стол, телевизор, мини-бар, сейф, бесплатный Wi-Fi.</p>
+                    <h3 data-translate="standard_title">Стандарт</h3>
+                    <p data-translate="room_standard_desc">
+Уютный номер площадью 25 м² с современным дизайном. В номере: двуспальная кровать или две односпальные, ванная комната с душем, рабочий стол, телевизор, мини-бар, сейф, бесплатный Wi-Fi.
+</p>
                     <ul class="room-amenities">
-                        <li><i class="fas fa-wifi"></i> Бесплатный Wi-Fi</li>
-                        <li><i class="fas fa-tv"></i> Телевизор</li>
-                        <li><i class="fas fa-snowflake"></i> Кондиционер</li>
-                        <li><i class="fas fa-coffee"></i> Чайник</li>
+                        <li><i class="fas fa-wifi"></i> <span data-translate="amenity_wifi">Бесплатный Wi-Fi</span></li>
+<li><i class="fas fa-tv"></i> <span data-translate="amenity_tv">Телевизор</span></li>
+<li><i class="fas fa-snowflake"></i> <span data-translate="amenity_ac">Кондиционер</span></li>
+<li><i class="fas fa-coffee"></i> <span data-translate="amenity_kettle">Чайник</span></li>
+
                     </ul>
                     <div class="room-price">
-                        <span class="price">15,000 ₸</span>
-                        <span class="per-night">/ за ночь</span>
+                        <span class="price" data-translate="room_standard_price">15,000 ₸</span>
+                        <span class="per-night" data-translate="per_night">/ за ночь</span>
                     </div>
-                    <a href="booking.html" class="book-now-btn">Забронировать</a>
+                    <a href="booking.html?room=standard" class="book-now-btn" data-translate="book_now">Забронировать</a>
+
+
                 </div>
             </div>
 
@@ -69,20 +80,23 @@
                     <img src="img/rooms/comfort.jpg" alt="Комфорт">
                 </div>
                 <div class="room-description">
-                    <h2>Комфорт</h2>
+                    <h3 data-translate="comfort_title">Комфорт</h3>
                     <p>Просторный номер площадью 35 м² с дополнительными удобствами. В номере: двуспальная кровать King Size, гостиная зона, ванная комната с душем и халатами, рабочий стол, телевизор, мини-бар, сейф, бесплатный Wi-Fi.</p>
                     <ul class="room-amenities">
-                        <li><i class="fas fa-wifi"></i> Бесплатный Wi-Fi</li>
-                        <li><i class="fas fa-tv"></i> Smart TV</li>
-                        <li><i class="fas fa-snowflake"></i> Кондиционер</li>
-                        <li><i class="fas fa-coffee"></i> Кофемашина</li>
-                        <li><i class="fas fa-bath"></i> Халаты и тапочки</li>
+                         <li><i class="fas fa-wifi"></i> <span data-translate="amenity_wifi">Бесплатный Wi-Fi</span></li>
+<li><i class="fas fa-tv"></i> <span data-translate="amenity_tv1">Smart TV</span></li>
+<li><i class="fas fa-snowflake"></i> <span data-translate="amenity_ac1">Кондиционер</span></li>
+<li><i class="fas fa-coffee"></i> <span data-translate="amenity_coffee1">Кофемашина</span></li>
+<li><i class="fas fa-bath"></i> <span data-translate="amenity_bath1">Халаты и тапочки</span></li>
                     </ul>
                     <div class="room-price">
-                        <span class="price">25,000 ₸</span>
-                        <span class="per-night">/ за ночь</span>
+                        <span class="price" data-translate="room_comfort_price">25,000 ₸</span>
+
+                        <span class="per-night" data-translate="per_night">/ за ночь</span>
                     </div>
-                    <a href="booking.html" class="book-now-btn">Забронировать</a>
+                    <a href="booking.html?room=comfort" class="book-now-btn" data-translate="book_now">Забронировать</a>
+
+
                 </div>
             </div>
 
@@ -91,46 +105,84 @@
                     <img src="img/rooms/lux.jpg" alt="Люкс">
                 </div>
                 <div class="room-description">
-                    <h2>Люкс</h2>
-                    <p>Премиальный номер площадью 50 м² с эксклюзивным сервисом. В номере: двуспальная кровать King Size, отдельная гостиная зона, ванная комната с джакузи и халатами, рабочий кабинет, 2 телевизора, мини-бар, сейф, бесплатный Wi-Fi, ежедневная уборка, приветственный набор.</p>
+                    <h3 data-translate="lux_title">Люкс</h3>
+                    <p data-translate="room_lux_desc">
+Премиальный номер площадью 50 м² с эксклюзивным сервисом. В номере: двуспальная кровать King Size, отдельная гостиная зона, ванная комната с джакузи и халатами, рабочий кабинет, 2 телевизора, мини-бар, сейф, бесплатный Wi-Fi, ежедневная уборка, приветственный набор.
+</p>
                     <ul class="room-amenities">
-                        <li><i class="fas fa-wifi"></i> Бесплатный Wi-Fi</li>
-                        <li><i class="fas fa-tv"></i> 2 Smart TV</li>
-                        <li><i class="fas fa-snowflake"></i> Кондиционер</li>
-                        <li><i class="fas fa-coffee"></i> Кофемашина премиум</li>
-                        <li><i class="fas fa-bath"></i> Джакузи и халаты</li>
-                        <li><i class="fas fa-concierge-bell"></i> Персональный консьерж</li>
+                        <li><i class="fas fa-wifi"></i> <span data-translate="amenity_wifi2">Бесплатный Wi-Fi</span></li>
+<li><i class="fas fa-tv"></i> <span data-translate="amenity_tv2">2 Smart TV</span></li>
+<li><i class="fas fa-snowflake"></i> <span data-translate="amenity_ac2">Кондиционер</span></li>
+<li><i class="fas fa-coffee"></i> <span data-translate="amenity_coffee2">Кофемашина премиум</span></li>
+<li><i class="fas fa-bath"></i> <span data-translate="amenity_bath2">Джакузи и халаты</span></li>
+<li><i class="fas fa-concierge-bell"></i> <span data-translate="amenity_concierge">Персональный консьерж</span></li>
                     </ul>
                     <div class="room-price">
-                        <span class="price">45,000 ₸</span>
-                        <span class="per-night">/ за ночь</span>
+                            <span class="price" data-translate="room_lux_price">45,000 ₸</span>
+
+                        <span class="per-night" data-translate="per_night">/ за ночь</span>
                     </div>
-                    <a href="booking.html" class="book-now-btn">Забронировать</a>
+                    <a href="booking.html?room=lux" class="book-now-btn" data-translate="book_now">Забронировать</a>
+
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
+  
 
-    <footer class="footer">
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-about">
+      <h3 data-translate="about_title">О отеле</h3>
+      <p data-translate="about_text">
+        Miranza — современный отель в сердце Алматы, созданный для тех, кто ценит комфорт, стиль и уют.
+        Мы предлагаем первоклассное обслуживание, просторные номера и атмосферу спокойствия,
+        где каждый гость чувствует себя как дома.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 data-translate="explore_title">Исследование</h3>
+      <nav class="footer-nav">
+        <a href="index.html" data-translate="nav_home">Главная</a>
         
-        <div class="contact-info">
-            <h3>Контакты</h3>
-            <p><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
-            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
-            <p><i class="fas fa-envelope"></i> info@miranza.com</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Hotel Miranza. Все права защищены.</p>
-        </div>
-    </footer>
+        <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+        <a href="spa.html" data-translate="nav_spa">SPA</a>
+        <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+        <a href="contact.html" data-translate="nav_contact">Контакты</a>
+      </nav>
+    </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
+    <div class="contact-info">
+      <h3 data-translate="contacts_title">Контакты</h3>
+        <div class="contact-links">
+          <p data-translate="contacts_address"><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
+          <p data-translate="contacts_phone"><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+          <p data-translate="contacts_email"><i class="fas fa-envelope"></i> info@miranza.com</p>
+        </div>
+    </div>
+
+    <!-- НОВАЯ КОЛОНКА соцсетей -->
+    <div class="footer-social">
+      <h3 data-translate="social_title">Мы в соцсетях</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    <p data-translate="footer_copy">&copy; 2025 Hotel Miranza. Все права защищены.</p>
+  </div>
+</footer>
+
+    <script src="js/main.js?v=4"></script>
+    <script src="js/navbar.js?v=4"></script>
+    <script src="js/lang.js?v=4"></script>
 </body>
 </html>
