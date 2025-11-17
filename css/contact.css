@@ -83,6 +83,7 @@
 
 /* Форма */
 .miranza-form {
+  width: 100%;
   flex: 1;
   min-width: 300px;
 }
