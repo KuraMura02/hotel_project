@@ -69,7 +69,7 @@
 
 .room-card img {
     width: 100%;
-    height: 220px;
+    height: 320px;
     object-fit: cover;
 }
 
@@ -221,7 +221,7 @@
     }
     
     .room-card {
-        flex: 0 0 350px;
+        flex: 0 0 500px;
     }
 }
 
@@ -231,7 +231,7 @@
     }
     
     .room-card {
-        flex: 0 0 350px;
+        flex: 0 0 300px;
     }
     
     .room-description h2 {
