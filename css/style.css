@@ -94,6 +94,10 @@ section {
     margin: 15px auto 0;
 }
 
+[data-translate] {
+  visibility: hidden; /* скрываем текст пока не применится перевод */
+}
+
 /* Общие стили для всех страниц */
 .hero {
     height: 80vh;
@@ -222,6 +226,38 @@ section {
   text-align: center;
 }
 
+.room-container {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Левая колонка фиксирована, правая растягивается */
+  gap: 20px;
+}
+
+.rooms-info {
+  position: sticky; /* Фиксируем слева при скролле */
+  top: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.rooms-carousel {
+  display: flex;
+  overflow-x: auto; /* Горизонтальный скролл */
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+
+.rooms-carousel::-webkit-scrollbar {
+  height: 8px; /* размер горизонтального скролла */
+}
+
+.rooms-carousel::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+
+
 .reviews-section h2 {
   color: var(--secondary-color);
   font-size: 2.2rem;
@@ -244,6 +280,7 @@ section {
   transition: transform 0.6s ease;
   width: 100%;
 }
+/*новости*/
 
 /* Каждый отзыв */
 .review-card {
@@ -287,6 +324,64 @@ section {
 .dot.active {
   background: #d6a727;
 }
+.c-scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: none; /* скрываем по умолчанию */
+}
+
+.c-button {
+    position: relative;
+    background: #fff;
+    border: none; /* убираем бордер */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s, background 0.3s;
+    overflow: visible;
+}
+
+.c-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #333; /* чёрная стрелка */
+    stroke-width: 2;
+    stroke-linecap: round;
+    fill: none;
+    z-index: 2;
+    position: relative;
+}
+
+/* Круговая прогресс-линия */
+.progress-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    transform: rotate(-90deg); /* чтобы начиналось сверху */
+    pointer-events: none;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: #f4c542; /* жёлтый прогресс */
+    stroke-width: 3;
+    stroke-dasharray: 138; /* длина круга */
+    stroke-dashoffset: 138; /* изначально скрыто */
+    transition: stroke-dashoffset 0.2s linear;
+}
+
+
+
+
 
 /* ====== Адаптив ====== */
 @media (max-width: 600px) {
@@ -299,6 +394,24 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+    .rooms-carousel {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .room-card {
+        width: 180px;
+    }
+
+    .rooms-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .rooms-info p {
+        font-size: 1rem;
+    }
+}
 
   /*отзыв конец*/
   /* ====== Адаптивность ====== */
@@ -338,8 +451,27 @@ section {
     .booking_form label {
       font-size: 13px;
     }
+    .room-container {
+        grid-template-columns: 1fr; /* Левая колонка сверху, правая под ней */
+        padding: 20px;
+    }
 
+    .rooms-info {
+        position: relative; /* убираем sticky */
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
+    .rooms-carousel {
+        overflow-x: scroll;
+        gap: 15px;
+    }
+
+    .room-card {
+        width: 220px;
+    }
+
+ }
 /*контакты*/
 
 /* Адаптивные стили */
@@ -379,5 +511,21 @@ section {
     .section-title {
         font-size: 1.8rem;
     }
+    
+     .rooms-carousel {
+        gap: 8px;
+    }
+
+    .room-card {
+        width: 160px;
+    }
+
+    .rooms-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .rooms-info p {
+        font-size: 0.9rem;
+    }
 }
-  }
+ 
