@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан - Hotel Miranza</title>
+    
+    <link rel="icon" type="image/png" href="img/icons/miranza_logo.png">
+    <link rel="shortcut icon" href="img/icons/miranza_logo.png">
+
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/navbar.css?v=4">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/footer.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
+            </a>
+            <nav class="navbar">
+                <a href="index.html" data-translate="nav_home">Главная</a>
+                
+                <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+                <a href="restaurant.html" data-translate="nav_restaurant" class="active">Ресторан</a>
+                <a href="spa.html" data-translate="nav_spa">SPA</a>
+                <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+                <a href="contact.html" data-translate="nav_contact">Контакты</a>
+
+            </nav>
+            <div class="language-switcher">
+                <button class="lang" data-lang="kz">KZ</button>
+                <button class="lang" data-lang="ru">RU</button>
+                <button class="lang" data-lang="en">EN</button>
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="restaurant-hero">
+        <h1 data-translate="restaurant_title">Ресторан</h1>
+    </section>
+
+<section id="menu" class="restaurant-menu section-padding">
+    <div class="container">
+        
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="breakfast" data-translate="menu_breakfast">Завтрак</button>
+            <button class="tab-button" data-tab="lunch" data-translate="menu_lunch">Обед</button>
+            <button class="tab-button" data-tab="dinner" data-translate="menu_dinner">Ужин</button>
+            <button class="tab-button" data-tab="bar" data-translate="menu_bar">Бар</button>
+        </div>
+
+        <div class="tab-content active" id="breakfast">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h5 data-translate="dish_kasha">Каша с куртом <span class="price">1800 ₸</span></h5>
+                    <p data-translate="desc_kasha">Традиционная казахская каша с домашним куртом</p>
+                     <img src="img/restaurant/1.jpg" class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5 data-translate="dish_omelet">Омлет с овощами <span class="price">2200 ₸</span></h5>
+                    <p data-translate="desc_omelet">Классический омлет с сезонными овощами и хлебом</p>
+                     <img src="img/restaurant/2.JPG"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5 data-translate="dish_pancakes">Блины с вареньем <span class="price">2000 ₸</span></h5>
+                    <p data-translate="desc_pancakes">Тонкие блины с домашним клубничным вареньем</p>
+
+                     <img src="img/restaurant/3.JPG"  class="menu-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="lunch">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h5>Бешбармак <span class="price">3800 ₸</span></h5>
+                    <p>Классическое казахское блюдо из конины и лапши</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Цезарь с курицей <span class="price">3200 ₸</span></h5>
+                    <p>Европейский салат с соусом цезарь и куриным филе</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Суп-пюре из брокколи <span class="price">2800 ₸</span></h5>
+                    <p>Нежный крем-суп с хрустящими гренками</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="dinner">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h5>Стейк из говядины <span class="price">5200 ₸</span></h5>
+                    <p>Сочный стейк средней прожарки с соусом демиглас</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Куырдак <span class="price">4500 ₸</span></h5>
+                    <p>Традиционное жаркое из печени, сердца и картофеля</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Паста Карбонара <span class="price">4000 ₸</span></h5>
+                    <p>Классическая итальянская паста с беконом и пармезаном</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="bar">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h5>Коктейль "Алатау" <span class="price">2500 ₸</span></h5>
+                    <p>Освежающий напиток с кумысом и мятой</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Красное вино Merlot <span class="price">5500 ₸</span></h5>
+                    <p>Французское вино с нотами вишни и дуба</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+                <div class="menu-item">
+                    <h5>Американо <span class="price">1500 ₸</span></h5>
+                    <p>Классический черный кофе</p>
+                     <img src="images/kasha.jpg"  class="menu-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="restaurant-section">
+    <div class="container">
+        
+    </div>
+</section>
+
+ <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-about">
+      <h3 data-translate="about_title">О отеле</h3>
+      <p data-translate="about_text">
+        Miranza — современный отель в сердце Алматы, созданный для тех, кто ценит комфорт, стиль и уют.
+        Мы предлагаем первоклассное обслуживание, просторные номера и атмосферу спокойствия,
+        где каждый гость чувствует себя как дома.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 data-translate="explore_title">Исследование</h3>
+      <nav class="footer-nav">
+        <a href="index.html" data-translate="nav_home">Главная</a>
+        
+        <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+        <a href="spa.html" data-translate="nav_spa">SPA</a>
+        <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+        <a href="contact.html" data-translate="nav_contact">Контакты</a>
+      </nav>
+    </div>
+
+    <div class="contact-info">
+      <h3 data-translate="contacts_title">Контакты</h3>
+        <div class="contact-links">
+          <p data-translate="contacts_address"><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
+          <p data-translate="contacts_phone"><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+          <p data-translate="contacts_email"><i class="fas fa-envelope"></i> info@miranza.com</p>
+        </div>
+    </div>
+
+    <!-- НОВАЯ КОЛОНКА соцсетей -->
+    <div class="footer-social">
+      <h3 data-translate="social_title">Мы в соцсетях</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    <p data-translate="footer_copy">&copy; 2025 Hotel Miranza. Все права защищены.</p>
+  </div>
+</footer>
+
+
+
+    <script src="js/main.js?v=4"></script>
+    <script src="js/navbar.js?v=4"></script>
+    <script src="js/lang.js?v=4"></script>
+    
+<script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
