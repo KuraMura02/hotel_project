@@ -1,0 +1,107 @@
+.restaurant-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/restaurant/restaurant-hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.restaurant-hero h1 {
+    font-size: 3.5rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+
+
+.restaurant-hero h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.restaurant-hero p {
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+/* Menu */
+.section-padding {
+    padding: 80px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.tabs {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    background: none;
+    border: 1px ;
+    color: #fff;
+    padding: 10px 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active, .tab-button:hover {
+    background: #000000;
+    color: #f4c542;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item h5 {
+    display: flex;
+    justify-content: space-between;
+    color: #f1c40f;
+}
+
+.menu-item p {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.price {
+    color: #fff;
+}
