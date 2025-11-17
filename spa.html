@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Номера - Hotel Miranza</title>
+    <link rel="icon" type="image/png" href="img/icons/miranza_logo.png">
+    <link rel="shortcut icon" href="img/icons/miranza_logo.png">
+    <link rel="icon" type="image/png" href="img/icons/miranza_logo.png">
+    <link rel="shortcut icon" href="img/icons/miranza_logo.png">
+
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/navbar.css?v=4">
+    <link rel="stylesheet" href="css/spa.css">
+    <link rel="stylesheet" href="css/footer.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
+            </a>
+            <nav class="navbar">
+                <a href="index.html" data-translate="nav_home">Главная</a>
+                
+                <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+                <a href="restaurant.html" data-translate="nav_restaurant">Ресторан</a>
+                <a href="spa.html" data-translate="nav_spa" class="active">SPA</a>
+                <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+                <a href="contact.html" data-translate="nav_contact">Контакты</a>
+
+            </nav>
+            <div class="language-switcher">
+                <button class="lang" data-lang="kz">KZ</button>
+                <button class="lang" data-lang="ru">RU</button>
+                <button class="lang" data-lang="en">EN</button>
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="spa-hero">
+        <h1>SPA</h1>
+    </section>
+
+    <section class="spa-section">
+    <div class="container">
+        <h2 class="section-title" data-translate="spa_title">Спа и Отдых</h2>
+        <p class="section-subtitle" data-translate="spa_subtitle">Расслабьтесь в атмосфере роскоши и комфорта</p>
+
+        <div class="spa-grid">
+            <div class="spa-item">
+                <img src="img/spa/pool.jpg" alt="Бассейн">
+                <h3 data-translate="spa_pool">Бассейн</h3>
+                <p data-translate="spa_pool_desc">Крытый подогреваемый бассейн с зоной отдыха и джакузи.</p>
+                <span class="price">₸7 000 / день</span>
+            </div>
+
+            <div class="spa-item">
+                <img src="img/spa/massage.jpg" alt="Массаж">
+                <h3 data-translate="spa_massage">Массаж</h3>
+                <p data-translate="spa_massage_desc">Профессиональные массажисты помогут вам расслабиться и восстановить силы.</p>
+                <span class="price">₸10 000 / сеанс</span>
+            </div>
+
+            <div class="spa-item">
+                <img src="img/spa/procedures.jpg" alt="СПА процедуры">
+                <h3 data-translate="spa_procedures">СПА процедуры</h3>
+                <p data-translate="spa_procedures_desc">Ароматерапия, пилинг, обёртывания и процедуры для лица и тела.</p>
+                <span class="price">₸12 000 / процедура</span>
+            </div>
+
+            <div class="spa-item">
+                <img src="img/spa/fitness.jpg" alt="Фитнес зал">
+                <h3 data-translate="spa_fitness">Фитнес зал</h3>
+                <p data-translate="spa_fitness_desc">Современное оборудование и персональные тренировки для гостей отеля.</p>
+                <span class="price">₸6 000 / день</span>
+            </div>
+        </div>
+
+        <div class="spa-note">
+            <p><i class="fas fa-info-circle"></i> <span data-translate="spa_discount">Для гостей отеля действует скидка 20% на все СПА-услуги.</span></p>
+        </div>
+    </div>
+</section>
+
+    
+ <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-about">
+      <h3 data-translate="about_title">О отеле</h3>
+      <p data-translate="about_text">
+        Miranza — современный отель в сердце Алматы, созданный для тех, кто ценит комфорт, стиль и уют.
+        Мы предлагаем первоклассное обслуживание, просторные номера и атмосферу спокойствия,
+        где каждый гость чувствует себя как дома.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 data-translate="explore_title">Исследование</h3>
+      <nav class="footer-nav">
+        <a href="index.html" data-translate="nav_home">Главная</a>
+        
+        <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+        <a href="spa.html" data-translate="nav_spa">SPA</a>
+        <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+        <a href="contact.html" data-translate="nav_contact">Контакты</a>
+      </nav>
+    </div>
+
+    <div class="contact-info">
+      <h3 data-translate="contacts_title">Контакты</h3>
+        <div class="contact-links">
+          <p data-translate="contacts_address"><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
+          <p data-translate="contacts_phone"><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+          <p data-translate="contacts_email"><i class="fas fa-envelope"></i> info@miranza.com</p>
+        </div>
+    </div>
+
+    <!-- НОВАЯ КОЛОНКА соцсетей -->
+    <div class="footer-social">
+      <h3 data-translate="social_title">Мы в соцсетях</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    <p data-translate="footer_copy">&copy; 2025 Hotel Miranza. Все права защищены.</p>
+  </div>
+</footer>
+
+    
+    <script src="js/main.js?v=4"></script>
+    <script src="js/lang.js?v=4"></script>
+    <script src="js/navbar.js?v=4"></script>
+</body>
+</html>
