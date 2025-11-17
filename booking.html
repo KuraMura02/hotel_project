@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бронирование - Hotel Miranza</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="icon" type="image/png" href="img/icons/miranza_logo.png">
+    <link rel="shortcut icon" href="img/icons/miranza_logo.png">
+    
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/navbar.css?v=4">
     <link rel="stylesheet" href="css/booking.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/footer.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+
 </head>
 <body>
     <header class="header">
@@ -17,16 +24,18 @@
                 <img src="img/icons/miranza_logo-Photoroom.png" alt="Hotel Miranza" class="logo-img">
             </a>
             <nav class="navbar">
-                <a href="index.html">Главная</a>
-                <a href="about.html">О нас</a>
-                <a href="rooms.html">Номера</a>
-                <a href="booking.html" class="active">Бронирование</a>
-                <a href="contact.html">Контакты</a>
+                <a href="index.html" data-translate="nav_home">Главная</a>
+                
+                <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+                <a href="restaurant.html" data-translate="nav_restaurant">Ресторан</a>
+                <a href="spa.html" data-translate="nav_spa">SPA</a>
+                <a href="booking.html" data-translate="nav_booking" class="active">Бронирование</a>
+                <a href="contact.html" data-translate="nav_contact">Контакты</a>
             </nav>
             <div class="language-switcher">
-                <button>KZ</button>
-                <button class="active">RU</button>
-                <button>EN</button>
+                <button class="lang" data-lang="kz">KZ</button>
+                <button class="lang" data-lang="ru">RU</button>
+                <button class="lang" data-lang="en">EN</button>
             </div>
             <div class="burger-menu">
                 <span></span>
@@ -37,167 +46,221 @@
     </header>
 
     <section class="booking-hero">
-        <h1>Бронирование номера</h1>
-    </section>
+    <h1 data-translate="booking_title">Бронирование номера</h1>
+</section>
 
-    <section class="booking-form-section">
-        <div class="container booking-container">
-            <form class="detailed-booking-form" id="bookingForm">
-                
+<section class="booking-form-section">
+    <div class="container booking-container">
+        <form class="detailed-booking-form" id="bookingForm" action="booking_process.php" method="POST">
 
-                <div class="form-group">
-                    <h2>Даты проживания</h2>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="checkIn">Дата заезда*</label>
-                            <input type="date" id="checkIn" name="checkIn" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="checkOut">Дата выезда*</label>
-                            <input type="date" id="checkOut" name="checkOut" required>
-                        </div>
+            <div class="form-group">
+                <h2 data-translate="booking_dates_title">Даты проживания</h2>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="checkIn" data-translate="checkin_label">Дата заезда*</label>
+                        <input type="date" id="checkIn" name="checkIn" required>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <h2>Выбор номера</h2>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="roomType">Тип номера*</label>
-                            <select id="roomType" name="roomType" required>
-                                <option value="">Выберите номер</option>
-                                <option value="standard">Стандарт - 15,000 ₸/ночь</option>
-                                <option value="comfort">Комфорт - 25,000 ₸/ночь</option>
-                                <option value="lux">Люкс - 45,000 ₸/ночь</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="roomCount">Количество номеров*</label>
-                            <select id="roomCount" name="roomCount" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="adults">Взрослые*</label>
-                            <select id="adults" name="adults" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="children">Дети</label>
-                            <select id="children" name="children">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h2>Дополнительные услуги</h2>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="breakfast"> Завтрак (+3,000 ₸/чел)</label>
-                        <label><input type="checkbox" name="parking"> Парковка (+2,000 ₸/день)</label>
-                        <label><input type="checkbox" name="transfer"> Трансфер (+5,000 ₸)</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="input-group full-width">
-                            <label for="specialRequests">Особые пожелания</label>
-                            <textarea id="specialRequests" name="specialRequests" rows="4"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h2>Личные данные</h2>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="firstName">Имя*</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="lastName">Фамилия*</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="email">Email*</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="phone">Телефон*</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="submit-booking-btn">Подтвердить бронирование</button>
-                </div>
-            </form>
-
-            <div class="booking-summary" id="bookingSummary">
-                <h2>Итог бронирования</h2>
-                <div class="summary-content">
-                    <div class="summary-dates">
-                        <p><strong>Даты:</strong> <span id="summaryDates">Не выбрано</span></p>
-                        <p><strong>Ночей:</strong> <span id="summaryNights">0</span></p>
-                    </div>
-                    <div class="summary-room">
-                        <p><strong>Номер:</strong> <span id="summaryRoom">Не выбран</span></p>
-                        <p><strong>Кол-во:</strong> <span id="summaryRoomCount">1</span></p>
-                    </div>
-                    <div class="summary-guests">
-                        <p><strong>Гости:</strong> <span id="summaryGuests">0 взрослых, 0 детей</span></p>
-                    </div>
-                    <div class="summary-extras">
-                        <p><strong>Дополнительно:</strong></p>
-                        <ul id="summaryExtras">
-                            <li>Не выбрано</li>
-                        </ul>
-                    </div>
-                    <div class="summary-total">
-                        <p><strong>Итого:</strong> <span id="summaryTotal">0 ₸</span></p>
+                    <div class="input-group">
+                        <label for="checkOut" data-translate="checkout_label">Дата выезда*</label>
+                        <input type="date" id="checkOut" name="checkOut" required>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
+            <div class="form-group">
+                <h2 data-translate="booking_room_title">Выбор номера</h2>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="roomType" data-translate="room_type_label">Тип номера*</label>
+                        <select id="roomType" name="roomType" required>
+                            <option value="" data-translate="room_select_placeholder">Выберите номер</option>
+                            <option value="standard" data-translate="room_standard">Стандарт - 15,000 ₸/ночь</option>
+                            <option value="comfort" data-translate="room_comfort">Комфорт - 25,000 ₸/ночь</option>
+                            <option value="lux" data-translate="room_lux">Люкс - 45,000 ₸/ночь</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="roomCount" data-translate="room_count_label">Количество номеров*</label>
+                        <select id="roomCount" name="roomCount" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="adults" data-translate="adults_label*">Взрослые*</label>
+                        <select id="adults" name="adults" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="children" data-translate="children_label">Дети</label>
+                        <select id="children" name="children">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h2 data-translate="extras_title">Дополнительные услуги</h2>
+               <div class="checkbox-group">
+                <label>
+  <input type="checkbox" name="extras[]" value="1" data-translate="extra_breakfast"> 
+  <span data-translate="extra_breakfast_text">Завтрак (+3,000 ₸/чел)</span>
+</label>
+<label>
+  <input type="checkbox" name="extras[]" value="2" data-translate="extra_parking"> 
+  <span data-translate="extra_parking_text">Парковка (+2,000 ₸/день)</span>
+</label>
+<label>
+  <input type="checkbox" name="extras[]" value="3" data-translate="extra_transfer"> 
+  <span data-translate="extra_transfer_text">Трансфер (+5,000 ₸)</span>
+</label>
+
+</div>
+
+                <div class="form-row">
+                    <div class="input-group full-width">
+                        <label for="specialRequests" data-translate="special_requests_label">Особые пожелания</label>
+                        <textarea id="specialRequests" name="specialRequests" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h2 data-translate="personal_info_title">Личные данные</h2>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="firstName" data-translate="first_name_label">Имя*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName" data-translate="last_name_label">Фамилия*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="email" data-translate="email_label">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone" data-translate="phone_label">Телефон*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-booking-btn" data-translate="submit_booking_btn">Подтвердить бронирование</button>
+               
+
+            </div>
+            <button id="pay" type="button" class="submit-booking-btn">
+                Оплатить картой
+            </button>
+
+
+        </form>
+
+        <div class="booking-summary" id="bookingSummary">
+            <h2 data-translate="summary_title">Итог бронирования</h2>
+            <div class="summary-content">
+                <div class="summary-dates">
+                    <p><strong data-translate="summary_dates_label">Даты:</strong> <span id="summaryDates" data-translate="summary_dates_value">Не выбрано</span></p>
+                    <p><strong data-translate="summary_nights_label">Ночей:</strong> <span id="summaryNights">0</span></p>
+                </div>
+                <div class="summary-room">
+                    <p><strong data-translate="summary_room_label">Номер:</strong> <span id="summaryRoom" data-translate="summary_room_value">Не выбран</span></p>
+                    <p><strong data-translate="summary_room_count_label">Кол-во:</strong> <span id="summaryRoomCount">1</span></p>
+                </div>
+                <div class="summary-guests">
+                    <p><strong data-translate="summary_guests_label">Гости:</strong> <span id="summaryGuests" data-translate="summary_guests_value">0 взрослых, 0 детей</span></p>
+                </div>
+                <div class="summary-extras">
+                    <p><strong data-translate="summary_extras_label">Дополнительно:</strong></p>
+                    <ul id="summaryExtras">
+                        <li data-translate="summary_extras_value">Не выбрано</li>
+                    </ul>
+                </div>
+                <div class="summary-total">
+                    <p><strong data-translate="summary_total_label">Итого:</strong> <span id="summaryTotal">0 ₸</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
     <footer class="footer">
-        
-        <div class="contact-info">
-            <h3>Контакты</h3>
-            <p><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
-            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
-            <p><i class="fas fa-envelope"></i> info@miranza.com</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Hotel Miranza. Все права защищены.</p>
-        </div>
-    </footer>
+  <div class="footer-container">
 
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/booking.js"></script>
+    <div class="footer-about">
+      <h3 data-translate="about_title">О отеле</h3>
+      <p data-translate="about_text">
+        Miranza — современный отель в сердце Алматы, созданный для тех, кто ценит комфорт, стиль и уют.
+        Мы предлагаем первоклассное обслуживание, просторные номера и атмосферу спокойствия,
+        где каждый гость чувствует себя как дома.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 data-translate="explore_title">Исследование</h3>
+      <nav class="footer-nav">
+        <a href="index.html" data-translate="nav_home">Главная</a>
+        
+        <a href="rooms.html" data-translate="nav_rooms">Номера</a>
+        <a href="spa.html" data-translate="nav_spa">SPA</a>
+        <a href="booking.html" data-translate="nav_booking">Бронирование</a>
+        <a href="contact.html" data-translate="nav_contact">Контакты</a>
+      </nav>
+    </div>
+
+    <div class="contact-info">
+      <h3 data-translate="contacts_title">Контакты</h3>
+        <div class="contact-links">
+          <p data-translate="contacts_address"><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Абая 123</p>
+          <p data-translate="contacts_phone"><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+          <p data-translate="contacts_email"><i class="fas fa-envelope"></i> info@miranza.com</p>
+        </div>
+    </div>
+
+    <!-- НОВАЯ КОЛОНКА соцсетей -->
+    <div class="footer-social">
+      <h3 data-translate="social_title">Мы в соцсетях</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    <p data-translate="footer_copy">&copy; 2025 Hotel Miranza. Все права защищены.</p>
+  </div>
+</footer>
+
+     <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
+<script src="js/booking.js?v=4"></script>
+
+
+    <script src="js/main.js?v=4"></script>
+    <script src="js/navbar.js?v=4"></script>  \
     <script src="js/booking_data.js"></script>
+    <script src="js/lang.js?v=4"></script>
 
 </body>
 </html>
